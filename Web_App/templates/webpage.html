@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nepali Text Input</title>
+</head>
+<body>
+    <form action="/process" method="POST" required>
+        <input type="text" name="nepali_text">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if original_text %}
+    <h3>Original Nepali Text:</h3>
+    <p>{{ original_text }}</p>
+    {% endif %}
+
+    {% if cleaned_text %}
+    <h3>Cleaned Nepali Text:</h3>
+    <p>{{ cleaned_text }}</p>
+    {% endif %}
+
+    {% if Predicted_Category %}
+    <h3>Predicted_Category:</h3>
+    <p>{{ Predicted_Category }}</p>
+    {% endif %}
+
+    {% if Predicted_Probability %}
+    <h3>Predicted_Probability:</h3>
+    <p>{{ Predicted_Probability }}</p>
+    {% endif %}
+</body>
+</html>
