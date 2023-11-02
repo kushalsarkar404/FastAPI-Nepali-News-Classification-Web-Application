@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Recommendation</title>
+</head>
+<body>
+    <h1>News Recommendation</h1>
+    <form action="/recommend" method="post">
+        <label for="nepaliText">Enter Nepali Text:</label>
+        <br>
+        <input type="text" id="nepaliText" name="nepaliText" required>
+        <br><br>
+        <label for="numNews">Number of News to Recommend:</label>
+        <br>
+        <select id="numNews" name="numNews">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Recommend">
+    </form>
+
+    {% if input_text %}
+    <h2>Original News</h2>
+    <p>{{ input_text | safe }}</p>
+    {% endif %}
+
+    {% if entire_text %}
+    <h2>Recommended News are Given Below:</h2>
+    <p>{{ entire_text | safe }}</p>
+    {% endif %}
+</body>
+</html>
